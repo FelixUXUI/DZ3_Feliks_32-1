@@ -39,15 +39,25 @@ function getShortName(lastName, firstName, middleName) {
 console.log(getShortName("Киселев", "Евгений", "Дмитриевич"));
 
 function getCardType(cardNumber) {
-    if (cardNumber.charAt(0) === '4') {
-        return 'VISA';
-    } else if (cardNumber.charAt(0) === '5') {
-        return 'MAESTRO';
-    } else if (cardNumber.charAt(0) === '9') {
-        return 'ELCARD';
-    } else {
-        return 'ERROR';
+    switch (cardNumber.charAt(0)) {
+        case "4":
+            return "VISA"
+        case "5":
+            return "MAESTRO"
+        case "9":
+            return "ELCARD"
+        default:
+            return "ERROR"
     }
+    // if (cardNumber.charAt(0) === '4') {
+    //     return 'VISA';
+    // } else if (cardNumber.charAt(0) === '5') {
+    //     return 'MAESTRO';
+    // } else if (cardNumber.charAt(0) === '9') {
+    //     return 'ELCARD';
+    // } else {
+    //     return 'ERROR';
+    // }
 }
 
 console.log(getCardType("4125 1251 4127 1251")); // VISA
